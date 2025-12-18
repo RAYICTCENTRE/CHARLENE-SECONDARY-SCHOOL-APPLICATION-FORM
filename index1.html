@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charlene Secondary School – Online Application</title>
+</head>
+
+<body style="margin:0;font-family:Segoe UI, Arial, sans-serif;background:#f6f8f6;color:#1a1a1a;">
+
+<!-- HEADER -->
+<div style="background:#0a5c2b;color:white;padding:25px;text-align:center;">
+  <h1 style="margin:0;">CHARLENE SECONDARY SCHOOL</h1>
+  <p style="margin:5px 0;font-size:14px;">
+    Kirwala – Kiryandongo District | P.O. Box 131 Bweyale
+  </p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div style="max-width:600px;margin:40px auto;background:white;padding:25px;
+            border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+
+  <p style="text-align:center;font-size:15px;">
+    Click the button below to fill in the student application form online.
+  </p>
+
+  <!-- TOGGLE BUTTON -->
+  <div style="text-align:center;">
+    <button onclick="toggleForm()"
+      style="padding:12px 30px;background:#0a5c2b;color:white;
+             border:none;border-radius:25px;font-size:16px;cursor:pointer;">
+      Open Application Form
+    </button>
+  </div>
+
+  <!-- APPLICATION FORM (HIDDEN INITIALLY) -->
+  <div id="applicationForm" style="display:none;margin-top:30px;">
+
+    <form action="https://formsubmit.co/info@charlene.school"
+          method="POST"
+          enctype="multipart/form-data">
+
+      <!-- FORMSUBMIT SETTINGS -->
+      <input type="hidden" name="_subject" value="New Student Application – Charlene Secondary School">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next"
+        value="https://rayictcentre.github.io/CHARLENE-SECONDARY-SCHOOL-APPLICATION-FORM/thank-you.html">
+
+      <label>Student Full Name</label><br>
+      <input type="text" name="Student Name" required
+        style="width:100%;padding:10px;margin-bottom:15px;"><br>
+
+      <label>Date of Birth</label><br>
+      <input type="date" name="Date of Birth" required
+        style="width:100%;padding:10px;margin-bottom:15px;"><br>
+
+      <label>Gender</label><br>
+      <select name="Gender" required
+        style="width:100%;padding:10px;margin-bottom:15px;">
+        <option value="">Select</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+
+      <label>Parent / Guardian Name</label><br>
+      <input type="text" name="Parent Name" required
+        style="width:100%;padding:10px;margin-bottom:15px;"><br>
+
+      <label>Phone / WhatsApp Number</label><br>
+      <input type="tel" name="Phone" required
+        style="width:100%;padding:10px;margin-bottom:15px;"><br>
+
+      <label>Email Address (optional)</label><br>
+      <input type="email" name="Email"
+        style="width:100%;padding:10px;margin-bottom:15px;"><br>
+
+      <label>Applying for Class</label><br>
+      <select name="Class" required
+        style="width:100%;padding:10px;margin-bottom:15px;">
+        <option value="">Select</option>
+        <option>S1</option>
+        <option>S2</option>
+        <option>S3</option>
+        <option>S5</option>
+      </select>
+
+      <label>Attach Results / Report Card (PDF or Image)</label><br>
+      <input type="file" name="Attachment"
+        accept=".pdf,.jpg,.png" required
+        style="margin-bottom:20px;"><br>
+
+      <button type="submit"
+        style="width:100%;padding:14px;background:#0a5c2b;
+               color:white;border:none;border-radius:6px;
+               font-size:16px;cursor:pointer;">
+        Submit Application
+      </button>
+
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="text-align:center;font-size:13px;color:#555;margin-bottom:20px;">
+  © Charlene Secondary School
+</div>
+
+<!-- TOGGLE SCRIPT -->
+<script>
+function toggleForm() {
+  var form = document.getElementById("applicationForm");
+  form.style.display = (form.style.display === "none") ? "block" : "none";
+}
+</script>
+
+</body>
+</html>
