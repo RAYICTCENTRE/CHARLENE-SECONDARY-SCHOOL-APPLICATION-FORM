@@ -36,8 +36,9 @@
   <!-- FORM (HIDDEN INITIALLY) -->
   <div id="applicationForm" style="display:none;margin-top:30px;">
 
-    <!-- IMPORTANT: replace email below -->
-    <form action="https://formsubmit.co/rayuganda@gmail.com" method="POST" enctype="multipart/form-data">
+    <form action="https://formsubmit.co/rayuganda@gmail.com" 
+          method="POST" 
+          enctype="multipart/form-data">
 
       <!-- FormSubmit settings -->
       <input type="hidden" name="_subject" value="New Student Application – Charlene Secondary School">
@@ -45,30 +46,41 @@
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_pdf" value="true">
 
+      <!-- REDIRECT AFTER SUBMISSION -->
+      <input type="hidden" name="_next" 
+        value="https://rayictcentre.github.io/CHARLENE-SECONDARY-SCHOOL-APPLICATION-FORM/thank-you.html">
+
       <label>Student Full Name</label><br>
-      <input type="text" name="Student Name" required style="width:100%;padding:10px;margin-bottom:15px;"><br>
+      <input type="text" name="Student Name" required
+             style="width:100%;padding:10px;margin-bottom:15px;"><br>
 
       <label>Date of Birth</label><br>
-      <input type="date" name="Date of Birth" required style="width:100%;padding:10px;margin-bottom:15px;"><br>
+      <input type="date" name="Date of Birth" required
+             style="width:100%;padding:10px;margin-bottom:15px;"><br>
 
       <label>Gender</label><br>
-      <select name="Gender" required style="width:100%;padding:10px;margin-bottom:15px;">
+      <select name="Gender" required
+              style="width:100%;padding:10px;margin-bottom:15px;">
         <option value="">Select</option>
         <option>Male</option>
         <option>Female</option>
       </select>
 
       <label>Parent / Guardian Name</label><br>
-      <input type="text" name="Parent Name" required style="width:100%;padding:10px;margin-bottom:15px;"><br>
+      <input type="text" name="Parent Name" required
+             style="width:100%;padding:10px;margin-bottom:15px;"><br>
 
       <label>Phone / WhatsApp Number</label><br>
-      <input type="tel" name="Phone" required style="width:100%;padding:10px;margin-bottom:15px;"><br>
+      <input type="tel" name="Phone" required
+             style="width:100%;padding:10px;margin-bottom:15px;"><br>
 
       <label>Email Address</label><br>
-      <input type="email" name="Email" style="width:100%;padding:10px;margin-bottom:15px;"><br>
+      <input type="email" name="Email"
+             style="width:100%;padding:10px;margin-bottom:15px;"><br>
 
       <label>Applying for Class</label><br>
-      <select name="Class" required style="width:100%;padding:10px;margin-bottom:15px;">
+      <select name="Class" required
+              style="width:100%;padding:10px;margin-bottom:15px;">
         <option value="">Select</option>
         <option>S1</option>
         <option>S2</option>
@@ -77,10 +89,15 @@
       </select>
 
       <label>Attach Results / Report Card (PDF or Image)</label><br>
-      <input type="file" name="Attachment" accept=".pdf,.jpg,.png" required style="margin-bottom:20px;"><br>
+      <input type="file" name="Attachment"
+             accept=".pdf,.jpg,.png"
+             required
+             style="margin-bottom:20px;"><br>
 
       <button type="submit"
-        style="width:100%;padding:14px;background:#0a5c2b;color:white;border:none;border-radius:6px;font-size:16px;cursor:pointer;">
+        style="width:100%;padding:14px;background:#0a5c2b;
+               color:white;border:none;border-radius:6px;
+               font-size:16px;cursor:pointer;">
         Submit Application
       </button>
 
