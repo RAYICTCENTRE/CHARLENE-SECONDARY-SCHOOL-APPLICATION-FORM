@@ -3,117 +3,189 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Charlene Secondary School – Online Application</title>
+<title>Charlene Secondary School – Teaching Vacancies</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI, Arial, sans-serif;
+  background:#f4f7f6;
+  color:#1a1a1a;
+}
+h1,h2,h3{margin-top:0}
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:30px 20px;
+}
+.card{
+  background:white;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  padding:35px;
+  margin-bottom:45px;
+}
+.btn{
+  padding:14px 32px;
+  border:none;
+  border-radius:30px;
+  font-size:15px;
+  cursor:pointer;
+  color:white;
+  background:linear-gradient(135deg,#0a5c2b,#128a44);
+}
+.btn.secondary{
+  background:linear-gradient(135deg,#083f1f,#0a5c2b);
+}
+.btn:hover{opacity:0.92}
+
+/* IMAGE GALLERY FIX */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:22px;
+  margin-top:30px;
+}
+.image-card{
+  background:#f2f5f3;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 6px 14px rgba(0,0,0,0.08);
+  aspect-ratio: 4 / 3;   /* FORCE SAME HEIGHT */
+}
+.image-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;     /* CROP NICELY */
+  transition:transform 0.4s ease;
+}
+.image-card:hover img{
+  transform:scale(1.06);
+}
+
+.vacancy-card{
+  background:#f7faf8;
+  border-radius:12px;
+  padding:25px;
+  margin-top:30px;
+}
+.vacancy-card ul{
+  padding-left:18px;
+}
+.vacancy-card a{
+  text-decoration:none;
+  font-weight:600;
+  color:#0a5c2b;
+}
+.vacancy-card a:hover{text-decoration:underline}
+
+.notice{
+  background:#eef6f1;
+  border-left:5px solid #0a5c2b;
+  padding:20px;
+  border-radius:8px;
+  margin-top:35px;
+}
+
+footer{
+  text-align:center;
+  font-size:13px;
+  color:#555;
+  padding:25px 10px;
+}
+</style>
 </head>
 
-<body style="margin:0;font-family:Segoe UI, Arial, sans-serif;background:#f6f8f6;color:#1a1a1a;">
+<body>
 
 <!-- HEADER -->
-<div style="background:#0a5c2b;color:white;padding:25px;text-align:center;">
-  <h1 style="margin:0;">CHARLENE SECONDARY SCHOOL</h1>
-  <p style="margin:5px 0;font-size:14px;">
-    Kirwala – Kiryandongo District | P.O. Box 131 Bweyale
-  </p>
+<div style="background:linear-gradient(135deg,#0a5c2b,#128a44);
+            color:white;text-align:center;padding:45px 20px;">
+  <img src="school logo.jpeg" alt="School Logo" style="height:90px;margin-bottom:18px;">
+  <h1>CHARLENE SECONDARY SCHOOL</h1>
+  <p>Kirwala – Kiryandongo District | P.O. Box 131 Bweyale</p>
 </div>
 
-<!-- MAIN -->
-<div style="max-width:600px;margin:40px auto;background:white;padding:25px;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+<div class="container">
 
-  <h2 style="text-align:center;color:#0a5c2b;">Student Application</h2>
+<!-- ABOUT -->
+<div class="card">
+  <h2 style="text-align:center;color:#0a5c2b;">About Our School</h2>
+
+  <p style="line-height:1.8;font-size:15px;">
+    Charlene Secondary School is a faith-based, community-centered institution committed
+    to academic excellence, character formation, and practical skills development.
+    We integrate formal education, vocational exposure, and Christian values to nurture
+    responsible, disciplined, and future-ready learners.
+  </p>
+
+  <!-- FIXED IMAGE GALLERY -->
+  <div class="gallery">
+    <div class="image-card">
+      <img src="gate.jpeg" alt="School Gate">
+    </div>
+    <div class="image-card">
+      <img src="class block.jpeg" alt="Class Block">
+    </div>
+    <div class="image-card">
+      <img src="vocational skills.jpeg" alt="Vocational Skills">
+    </div>
+    <div class="image-card">
+      <img src="Bible donation.jpeg" alt="Bible Donation">
+    </div>
+  </div>
+</div>
+
+<!-- VACANCIES -->
+<div class="card">
+  <h2 style="text-align:center;color:#0a5c2b;">Teaching Vacancies</h2>
 
   <p style="text-align:center;font-size:15px;">
-    Click the button below to fill the application form online.
+    We invite passionate, qualified, and God-fearing professionals to join our academic
+    and leadership team.
   </p>
 
-  <!-- TOGGLE BUTTON -->
-  <div style="text-align:center;">
-    <button onclick="toggleForm()" 
-      style="padding:12px 30px;background:#0a5c2b;color:white;border:none;border-radius:25px;font-size:16px;cursor:pointer;">
-      Open Application Form
-    </button>
+  <div style="text-align:center;margin-top:30px;">
+    <button class="btn" onclick="toggleSection('teacher')">Teacher Application</button>
+    <button class="btn secondary" onclick="toggleSection('headteacher')">Head Teacher Application</button>
   </div>
 
-  <!-- FORM (HIDDEN INITIALLY) -->
-  <div id="applicationForm" style="display:none;margin-top:30px;">
+  <!-- TEACHER -->
+  <div id="teacher" class="vacancy-card" style="display:none;">
+    <h3>Teacher Vacancy</h3>
+    <ul>
+      <li><a href="Teacher Vacancy.pdf" download>📄 Teacher Job Description</a></li>
+      <li><a href="Teacher_Application_Form.pdf" download>📝 Teacher Application Form</a></li>
+    </ul>
+  </div>
 
-    <form action="https://formsubmit.co/rayuganda@gmail.com" 
-          method="POST" 
-          enctype="multipart/form-data">
+  <!-- HEAD TEACHER -->
+  <div id="headteacher" class="vacancy-card" style="display:none;">
+    <h3>Head Teacher Vacancy</h3>
+    <ul>
+      <li><a href="Charlene Head Teacher Job Description.pdf" download>📄 Head Teacher Job Description</a></li>
+      <li><a href="Charlene_Head_Teacher_Application_Form.pdf" download>📝 Head Teacher Application Form</a></li>
+    </ul>
+  </div>
 
-      <!-- FormSubmit settings -->
-      <input type="hidden" name="_subject" value="New Student Application – Charlene Secondary School">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_pdf" value="true">
-
-      <!-- REDIRECT AFTER SUBMISSION -->
-      <input type="hidden" name="_next" 
-        value="https://rayictcentre.github.io/CHARLENE-SECONDARY-SCHOOL-APPLICATION-FORM/thank-you.html">
-
-      <label>Student Full Name</label><br>
-      <input type="text" name="Student Name" required
-             style="width:100%;padding:10px;margin-bottom:15px;"><br>
-
-      <label>Date of Birth</label><br>
-      <input type="date" name="Date of Birth" required
-             style="width:100%;padding:10px;margin-bottom:15px;"><br>
-
-      <label>Gender</label><br>
-      <select name="Gender" required
-              style="width:100%;padding:10px;margin-bottom:15px;">
-        <option value="">Select</option>
-        <option>Male</option>
-        <option>Female</option>
-      </select>
-
-      <label>Parent / Guardian Name</label><br>
-      <input type="text" name="Parent Name" required
-             style="width:100%;padding:10px;margin-bottom:15px;"><br>
-
-      <label>Phone / WhatsApp Number</label><br>
-      <input type="tel" name="Phone" required
-             style="width:100%;padding:10px;margin-bottom:15px;"><br>
-
-      <label>Email Address</label><br>
-      <input type="email" name="Email"
-             style="width:100%;padding:10px;margin-bottom:15px;"><br>
-
-      <label>Applying for Class</label><br>
-      <select name="Class" required
-              style="width:100%;padding:10px;margin-bottom:15px;">
-        <option value="">Select</option>
-        <option>S1</option>
-        <option>S2</option>
-        <option>S3</option>
-        <option>S5</option>
-      </select>
-
-      <label>Attach Results / Report Card (PDF or Image)</label><br>
-      <input type="file" name="Attachment"
-             accept=".pdf,.jpg,.png"
-             required
-             style="margin-bottom:20px;"><br>
-
-      <button type="submit"
-        style="width:100%;padding:14px;background:#0a5c2b;
-               color:white;border:none;border-radius:6px;
-               font-size:16px;cursor:pointer;">
-        Submit Application
-      </button>
-
-    </form>
+  <div class="notice">
+    📧 <strong>Submission Method:</strong><br>
+    Scan and email completed application forms and attachments to:<br>
+    <strong>info@charlene.school</strong>
   </div>
 </div>
 
-<!-- FOOTER -->
-<div style="text-align:center;font-size:13px;color:#555;margin-bottom:20px;">
-  © Charlene Secondary School
 </div>
+
+<footer>
+  © Charlene Secondary School | Kirwala – Kiryandongo District
+</footer>
 
 <script>
-function toggleForm() {
-  var form = document.getElementById("applicationForm");
-  form.style.display = form.style.display === "none" ? "block" : "none";
+function toggleSection(id){
+  document.getElementById("teacher").style.display="none";
+  document.getElementById("headteacher").style.display="none";
+  document.getElementById(id).style.display="block";
 }
 </script>
 
