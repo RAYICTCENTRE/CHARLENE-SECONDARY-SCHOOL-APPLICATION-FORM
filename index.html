@@ -38,19 +38,18 @@ h1,h2,h3{margin-top:0}
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
   padding:14px 32px;
   border:none;
   border-radius:30px;
   font-size:15px;
   cursor:pointer;
   color:white;
-  background:linear-gradient(135deg,#0a5c2b,#128a44);
+  background:linear-gradient(135deg,#083f1f,#0a5c2b);
   box-shadow:0 6px 14px rgba(0,0,0,0.15);
   transition:transform .2s ease, box-shadow .2s ease;
 }
 .btn.secondary{
-  background:linear-gradient(135deg,#083f1f,#0a5c2b);
+  background:linear-gradient(135deg,#0a5c2b,#128a44);
 }
 .btn:hover{
   transform:translateY(-2px);
@@ -100,8 +99,22 @@ h1,h2,h3{margin-top:0}
   margin-top:30px;
 }
 .vacancy-card ul{
-  padding-left:18px;
-  line-height:2;
+  list-style:none;
+  padding:0;
+}
+.vacancy-card li{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:14px;
+}
+.pdf-badge{
+  background:#c62828;
+  color:white;
+  font-size:12px;
+  font-weight:700;
+  padding:4px 8px;
+  border-radius:4px;
 }
 .vacancy-card a{
   text-decoration:none;
@@ -167,31 +180,52 @@ footer{
     and leadership team.
   </p>
 
+  <!-- BUTTON ORDER FIXED -->
   <div class="button-group">
-    <button class="btn" onclick="toggleSection('teacher')">👩‍🏫 Teacher Application</button>
-    <button class="btn secondary" onclick="toggleSection('headteacher')">🏫 Head Teacher Application</button>
-  </div>
-
-  <!-- TEACHER -->
-  <div id="teacher" class="vacancy-card" style="display:none;">
-    <h3>Teacher Vacancy</h3>
-    <ul>
-      <li><a href="Teacher Vacancy.pdf" download>📕 Teacher Job Description (PDF)</a></li>
-      <li><a href="Teacher_Application_Form.pdf" download>📕 Teacher Application Form (PDF)</a></li>
-    </ul>
+    <button class="btn" onclick="toggleSection('headteacher')">Head Teacher Application</button>
+    <button class="btn secondary" onclick="toggleSection('teacher')">Teacher Application</button>
   </div>
 
   <!-- HEAD TEACHER -->
   <div id="headteacher" class="vacancy-card" style="display:none;">
     <h3>Head Teacher Vacancy</h3>
     <ul>
-      <li><a href="Charlene Head Teacher Job Description.pdf" download>📕 Head Teacher Job Description (PDF)</a></li>
-      <li><a href="Charlene_Head_Teacher_Application_Form.pdf" download>📕 Head Teacher Application Form (PDF)</a></li>
+      <li>
+        <span class="pdf-badge">PDF</span>
+        <a href="Charlene Head Teacher Job Description.pdf" download>
+          Head Teacher Job Description
+        </a>
+      </li>
+      <li>
+        <span class="pdf-badge">PDF</span>
+        <a href="Charlene_Head_Teacher_Application_Form.pdf" download>
+          Head Teacher Application Form
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- TEACHER -->
+  <div id="teacher" class="vacancy-card" style="display:none;">
+    <h3>Teacher Vacancy</h3>
+    <ul>
+      <li>
+        <span class="pdf-badge">PDF</span>
+        <a href="Teacher Vacancy.pdf" download>
+          Teacher Job Description
+        </a>
+      </li>
+      <li>
+        <span class="pdf-badge">PDF</span>
+        <a href="Teacher_Application_Form.pdf" download>
+          Teacher Application Form
+        </a>
+      </li>
     </ul>
   </div>
 
   <div class="notice">
-    📧 <strong>Submission Method:</strong><br>
+    <strong>Submission Method:</strong><br>
     Scan and email completed application forms and attachments to:<br>
     <strong>info@charlene.school</strong>
   </div>
